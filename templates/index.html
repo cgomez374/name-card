@@ -95,9 +95,13 @@
 						<!-- Contact -->
 							<article id="contact" class="panel">
 								<header>
+									{% if msg_sent: %}
+									<h2>Successfully sent message!</h2>
+									{% else: %}
 									<h2>Contact Me</h2>
+									{% endif %}
 								</header>
-								<form action="#" method="post">
+								<form action="{{ url_for('contact_me_info') }}" method="post">
 									<div>
 										<div class="row">
 											<div class="col-6 col-12-medium">
